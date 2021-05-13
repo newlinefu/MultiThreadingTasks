@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 
 namespace ThreadsSolution
 {
@@ -15,25 +16,23 @@ namespace ThreadsSolution
             List<User> firstPart = users.Take(50).ToList();
             List<User> secondPart = users.Skip(50).Take(50).ToList();
             List<User> thirdPart = users.Skip(100).Take(50).ToList();
-
+            
+            Thread firstTr = new Thread(() => um.DoWork(firstPart));
+            Thread secondTr = new Thread(() => um.DoWork(secondPart));
+            Thread thirdTr = new Thread(() => um.DoWork(thirdPart));
+            
             Stopwatch sw = new Stopwatch();
             sw.Start();
             
-            um.DoWork(firstPart);
+            firstTr.Start();
+            secondTr.Start();
+            thirdTr.Start();
+
+            firstTr.Join();
+            secondTr.Join();
+            thirdTr.Join();
+            
             Console.WriteLine(sw.Elapsed);
-            
-            sw.Reset();
-            sw.Start();
-            
-            um.DoWork(secondPart);
-            Console.WriteLine(sw.Elapsed);
-            
-            sw.Reset();
-            sw.Start();
-            
-            um.DoWork(thirdPart);
-            Console.WriteLine(sw.Elapsed);
-            
             sw.Reset();
         }
     }
