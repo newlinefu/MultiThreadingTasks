@@ -9,35 +9,39 @@ namespace ThreadsSolution
 {
     class Program
     {
+        private static int result = 1;
         static void Main(string[] args)
         {
-            Thread t = new Thread(() =>
-            {
-                try
-                {
-                    Divide(10, 0);
-                }
-                catch (DivideByZeroException e)
-                {
-                    Console.WriteLine("Thread error catch | " + e.Message);
-                }
-            });
-            t.Start();
-            t.Join();
-
-            Task<int> task = new Task<int>(() => Divide(10, 0));
-            task.ContinueWith(
-                tsk => Console.WriteLine("Task error catch | " + tsk?.Exception?.Message), 
-                TaskContinuationOptions.OnlyOnFaulted
-            );
-            task.Start();
             
-            Thread.Sleep(1000);
+            Task[] workers =
+            {
+                new Task(() => RepeatTask(() => Interlocked.Increment(ref result), 100)),
+                new Task(() => RepeatTask(() => Interlocked.Decrement(ref result), 100))
+            };
+            
+            foreach (var w in workers)
+            {
+                w.Start();
+            }
+            
+            Task.Factory.ContinueWhenAny(
+                workers,
+                tsk => Console.WriteLine(result)
+            );
+            
+            Thread.Sleep(10000);
         }
 
-        private static int Divide(int a, int b)
+        private static void RepeatTask(Action taskBody, int count)
         {
-            return a / b;
+            Task[] tasks = new Task[count];
+            for (int i = 0; i < tasks.Length; i++)
+            {
+                tasks[i] = new Task(taskBody);
+                tasks[i].Start();
+            }
+
+            Task.WaitAll(tasks);
         }
     }
 }
