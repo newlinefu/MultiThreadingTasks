@@ -1,0 +1,16 @@
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.exe
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.deps.json
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.runtimeconfig.json
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.runtimeconfig.dev.json
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.dll
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ref\ThreadsSolution.dll
+D:\rider_projects\ThreadsSolution\ThreadsSolution\bin\Debug\net5.0\ThreadsSolution.pdb
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.csprojAssemblyReference.cache
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.GeneratedMSBuildEditorConfig.editorconfig
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.AssemblyInfoInputs.cache
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.AssemblyInfo.cs
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.csproj.CoreCompileInputs.cache
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.dll
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ref\ThreadsSolution.dll
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.pdb
+D:\rider_projects\ThreadsSolution\ThreadsSolution\obj\Debug\net5.0\ThreadsSolution.genruntimeconfig.cache
